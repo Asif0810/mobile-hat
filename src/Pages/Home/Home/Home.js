@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Footer from '../../../Shared/Footer/Footer';
 import Nav from '../../../Shared/Nav/Nav';
 import Banner from '../Banner/Banner';
+import CustomerCare from '../CustomerCare/CustomerCare';
 
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
         <div>
             <Nav></Nav>
             <Banner></Banner>
-            <Outlet></Outlet>
+            <CustomerCare></CustomerCare>
             <Footer></Footer>
         </div>
     );
