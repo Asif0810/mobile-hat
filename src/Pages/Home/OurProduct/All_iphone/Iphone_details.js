@@ -1,10 +1,9 @@
 import React from 'react';
 
-const Button_phone_details = ({ bPhone }) => {
-    console.log(bPhone)
+const Iphone_details = ({ ipho }) => {
     const { date, image, location,
         name, original_price, resale_price,
-        seller_name, _id } = bPhone
+        seller_name, _id } = ipho
     return (
         <div className="card w-80 bg-base-100 shadow-xl">
             <figure><img style={{ width: '300px', height: '300px' }} src={image} alt="Shoes" /></figure>
@@ -25,4 +24,4 @@ const Button_phone_details = ({ bPhone }) => {
     );
 };
 
-export default Button_phone_details;
+export default Iphone_details;
