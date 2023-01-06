@@ -14,7 +14,7 @@ const Button_phone_details = ({ bPhone }) => {
                     <div className="badge badge-secondary">price :$ {resale_price}</div>
                 </h2>
                 <p>seller : {seller_name}</p>
-                <p className='text-red-500'>original price : {original_price}</p>
+                <p className='text-red-500'>original price :$ {original_price}</p>
                 <p><strong>location :</strong> {location}</p>
                 <div className="card-actions justify-end">
                     <div className="badge badge-outline">Fashion</div>

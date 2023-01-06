@@ -12,7 +12,7 @@ const All_iphone = () => {
     return (
         <div>
             <h2>all iphone {alliphones.length}</h2>
-            <div>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg: gap-4 lg:grid-cols-3'>
                 {
                     alliphones.map(ipho => <Iphone_details key={ipho._id} ipho={ipho}></Iphone_details>)
                 }

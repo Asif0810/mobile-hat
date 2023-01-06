@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import logo from '../../asset/th (1).jpg'
 const Nav = () => {
     const navitem = <>
-        <li><Link className=''>Sign in</Link></li>
-        <li><Link className=''>Sign up</Link></li>
+        <li><Link to={''} className=''>Sign in</Link></li>
+        <li><Link to={'/register'} className=''>Sign up</Link></li>
         <li><Link className=''>Dasboard</Link></li>
         <li className='text-red-500'><Link>Sign Out</Link></li>
 

@@ -3,6 +3,8 @@ import Home from "../Pages/Home/Home/Home";
 import All_android from "../Pages/Home/OurProduct/All_button_phone/all_android/All_android";
 import All_button from "../Pages/Home/OurProduct/All_button_phone/All_button";
 import All_iphone from "../Pages/Home/OurProduct/All_iphone/All_iphone";
+import Register from "../Pages/Register/Register";
+
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -28,6 +30,11 @@ export const router = createBrowserRouter([
             {
                 path: '/all-iphone',
                 element: <All_iphone></All_iphone>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
+
             }
         ]
     }
