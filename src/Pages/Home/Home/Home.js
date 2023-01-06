@@ -10,11 +10,10 @@ import OurProduct from '../OurProduct/OurProduct';
 const Home = () => {
     return (
         <div>
-            <Nav></Nav>
             <Banner></Banner>
             <OurProduct></OurProduct>
             <CustomerCare></CustomerCare>
-            <Footer></Footer>
+
         </div>
     );
 };

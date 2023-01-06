@@ -1,10 +1,14 @@
 import React from 'react';
-import Home from '../Pages/Home/Home/Home';
+import { Outlet } from 'react-router-dom';
 
+import Footer from '../Shared/Footer/Footer';
+import Nav from '../Shared/Nav/Nav';
 const Main = () => {
     return (
         <div>
-            <Home></Home>
+            <Nav></Nav>
+            <Outlet></Outlet>
+            <Footer></Footer>
         </div>
     );
 };
