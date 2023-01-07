@@ -1,10 +1,12 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import button from '../../asset/SmartBigButton-3G-3-PNG.png'
 import iphone from '../../asset/iPhone-8-black.jpeg'
 import android from '../../asset/oneplus one android smart phone 5.jpg'
 
+
 const AddProduct = () => {
+    
     return (
         <div className='mb-24'>
 
@@ -37,6 +39,7 @@ const AddProduct = () => {
                     </Link>
                 </div>
             </div>
+          
         </div>
     );
 };

@@ -8,7 +8,7 @@ const ModalOpen = ({ openModal, selectedDate, setOpenModal, refetch }) => {
     const { user } = useContext(AuthCotext)
     const date = format(selectedDate, 'PP')
     const {
-        image, name, resale_price,
+        image, mobile_name, resale_price,
     } = openModal
 
 
@@ -61,7 +61,7 @@ const ModalOpen = ({ openModal, selectedDate, setOpenModal, refetch }) => {
                     <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <input name="name" type="text" disabled defaultValue={user?.displayName} placeholder="Type here" className="input w-80 ml-16 mt-5 input-bordered  " />
                     <input name="email" type="email" disabled defaultValue={user?.email} placeholder="Type here" className="input w-80 ml-16 mt-5 input-bordered  " />
-                    <input name="phoneName" type="text" disabled defaultValue={name} placeholder="Type here" className="input w-80 ml-16 mt-5 input-bordered  mb-6" /><br />
+                    <input name="phoneName" type="text" disabled defaultValue={mobile_name} placeholder="Type here" className="input w-80 ml-16 mt-5 input-bordered  mb-6" /><br />
                     <b className="w-80 ml-16 ">price : ${resale_price}</b>
                     <input name="phone" type="phone" placeholder="your phone" className="input w-80 ml-16 mt-5 input-bordered  " />
                     <input name="location" type="text" placeholder="meeting location" className="input w-80 ml-16 mt-5 input-bordered  " />

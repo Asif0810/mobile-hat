@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import ModalOpen from '../../../../ModalOpen/ModalOpen';
+import AddBtnPhone from '../../../addProduct/AddBtnPhone';
 import Iphone_details from './Iphone_details';
 
 const All_iphone = () => {
@@ -24,6 +25,7 @@ const All_iphone = () => {
             <div>
                 <ModalOpen selectedDate={selectedDate} openModal={openModal}></ModalOpen>
             </div>
+
         </div>
     );
 };
