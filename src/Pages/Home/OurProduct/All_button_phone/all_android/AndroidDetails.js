@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AndroidDetails = ({ and, setOpenModal }) => {
-    const { date, image, location,
+    const { date, mobile_name, image, location,
         name, original_price, resale_price,
         seller_name, _id } = and
     return (
@@ -10,7 +10,7 @@ const AndroidDetails = ({ and, setOpenModal }) => {
                 <figure><img style={{ width: '300px', height: '300px' }} src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
-                        {name}!
+                        {mobile_name}!
                         <div className="badge badge-secondary">price :$ {resale_price}</div>
                     </h2>
                     <p>seller name : {seller_name}</p>

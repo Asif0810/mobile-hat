@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Iphone_details = ({ ipho, setOpenModal }) => {
-    const { image, location,
+    const { image, mobile_name, location,
         name, original_price, resale_price,
         seller_name, _id } = ipho
     return (
@@ -9,7 +9,7 @@ const Iphone_details = ({ ipho, setOpenModal }) => {
             <figure><img style={{ width: '300px', height: '300px' }} src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
-                    {name}!
+                    {mobile_name}!
                     <div className="badge badge-secondary">price :$ {resale_price}</div>
                 </h2>
                 <p>seller : {seller_name}</p>
