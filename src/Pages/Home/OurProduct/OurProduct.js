@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import button from '../../../asset/SmartBigButton-3G-3-PNG.png'
 import iphone from '../../../asset/iPhone-8-black.jpeg'
 import android from '../../../asset/oneplus one android smart phone 5.jpg'
 import { Link } from 'react-router-dom';
 
 const OurProduct = () => {
-
+   
     return (
         <div className='mx-auto '>
             <h2 className=' text-4xl font-bold text-center mt-10'>You will get all three types of mobiles from us</h2>

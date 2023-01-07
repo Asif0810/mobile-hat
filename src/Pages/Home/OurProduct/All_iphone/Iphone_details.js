@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Iphone_details = ({ ipho }) => {
-    const { date, image, location,
+const Iphone_details = ({ ipho, setOpenModal }) => {
+    const { image, location,
         name, original_price, resale_price,
         seller_name, _id } = ipho
     return (
@@ -15,10 +15,7 @@ const Iphone_details = ({ ipho }) => {
                 <p>seller : {seller_name}</p>
                 <p className='text-red-500'>original price :$ {original_price}</p>
                 <p><strong>location :</strong> {location}</p>
-                <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
-                </div>
+                <label onClick={() => setOpenModal(ipho)} htmlFor="booking-modal" className="btn  btn-wide bg-gradient-to-r from-[#FF5733] to-[#C70039] border-none">bOOK NOW</label>
             </div>
         </div>
     );

@@ -1,12 +1,53 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../asset/th (1).jpg'
+import { AuthCotext } from '../../Context/AuthProvider';
 const Nav = () => {
+    const { google } = useContext(AuthCotext)
+    const googleHandler = () => {
+        google()
+            .then(result => {
+                const user = result.user;
+                console.log(user.displayName)
+
+                savuser(user?.email, user.displayName,)
+            })
+            .catch(console.error())
+    }
+    const savuser = (name, email) => {
+        const user = {
+            name,
+            email,
+            user_category: 'buyer'
+        }
+        fetch('http://localhost:5000/user', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+        console.log(user)
+    }
+    const { user, signout } = useContext(AuthCotext)
+    const logoutHandler = () => {
+        signout()
+            .then(() => { })
+            .catch(console.error())
+    }
     const navitem = <>
-        <li><Link to={''} className=''>Sign in</Link></li>
+
+        <li className='text-green-500'>{user?.email}</li>
+        <li><Link to={'/'}>Home</Link></li>
+        <li><Link to={'/login'} className=''>Sign in</Link></li>
         <li><Link to={'/register'} className=''>Sign up</Link></li>
         <li><Link className=''>Dasboard</Link></li>
-        <li className='text-red-500'><Link>Sign Out</Link></li>
+        <li className='text-red-500'><a onClick={logoutHandler} href=''>signOut</a></li>
+        <li><button onClick={googleHandler} className='btn  bg-gradient-to-r from-[#FF5733] to-[#C70039] border-none'>Google</button></li>
 
     </>
 

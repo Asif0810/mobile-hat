@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Footer from '../../../Shared/Footer/Footer';
 import Nav from '../../../Shared/Nav/Nav';
@@ -8,6 +8,7 @@ import OurProduct from '../OurProduct/OurProduct';
 
 
 const Home = () => {
+    
     return (
         <div>
             <Banner></Banner>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AndroidDetails = ({ and }) => {
+const AndroidDetails = ({ and, setOpenModal }) => {
     const { date, image, location,
         name, original_price, resale_price,
         seller_name, _id } = and
@@ -13,16 +13,15 @@ const AndroidDetails = ({ and }) => {
                         {name}!
                         <div className="badge badge-secondary">price :$ {resale_price}</div>
                     </h2>
-                    <p>seller : {seller_name}</p>
+                    <p>seller name : {seller_name}</p>
                     <p className='text-red-500'>original price :$ {original_price}</p>
                     <p><strong>location :</strong> {location}</p>
-                    <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Fashion</div>
-                        <div className="badge badge-outline">Products</div>
-                    </div>
+
+                    <label onClick={() => setOpenModal(and)} htmlFor="booking-modal" className="btn  btn-wide bg-gradient-to-r from-[#FF5733] to-[#C70039] border-none">bOOK NOW</label>
                 </div>
             </div>
-        </div>
+
+        </div >
     );
 };
 
