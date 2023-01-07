@@ -42,6 +42,7 @@ const Nav = () => {
     const navitem = <>
 
         <li className='text-green-500'>{user?.email}</li>
+        <li><Link to={'/addproduct'}>add product</Link></li>
         <li><Link to={'/'}>Home</Link></li>
         <li><Link to={'/login'} className=''>Sign in</Link></li>
         <li><Link to={'/register'} className=''>Sign up</Link></li>

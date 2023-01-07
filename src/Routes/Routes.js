@@ -1,5 +1,6 @@
 
 import Main from "../Layout/Main";
+import AddProduct from "../Pages/addProduct/AddProduct";
 import Home from "../Pages/Home/Home/Home";
 import All_android from "../Pages/Home/OurProduct/All_button_phone/all_android/All_android";
 import All_button from "../Pages/Home/OurProduct/All_button_phone/All_button";
@@ -42,7 +43,11 @@ export const router = createBrowserRouter([
                 path: '/login',
                 element: <Login></Login>
             },
-          
+            {
+                path: '/addproduct',
+                element: <AddProduct></AddProduct>
+            }
+
         ]
     }
 ])
