@@ -1,18 +1,18 @@
 
 import Main from "../Layout/Main";
-import AddBtnPhone from "../Pages/addProduct/AddBtnPhone";
-import AddProduct from "../Pages/addProduct/AddProduct";
+import AddAproduct from "../Pages/addProduct/AddAproduct";
+
 import Home from "../Pages/Home/Home/Home";
-import All_android from "../Pages/Home/OurProduct/All_button_phone/all_android/All_android";
-import All_button from "../Pages/Home/OurProduct/All_button_phone/All_button";
-import All_iphone from "../Pages/Home/OurProduct/All_iphone/All_iphone";
+
+import CategoryPhone from "../Pages/Home/OurProduct/categoryPhone";
 import Login from "../Pages/Login/Login";
+import MyBuyers from "../Pages/MyBuyers/MyBuyers";
 import Register from "../Pages/Register/Register";
+import UploadedPoruct from "../Pages/uploadedProduct/UploadedPoruct";
 
 
 
 const { createBrowserRouter } = require("react-router-dom");
-// const { default: Home } = require("../Pages/Home/Home/Home");
 
 export const router = createBrowserRouter([
     {
@@ -24,18 +24,6 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/all-button-phone',
-                element: <All_button></All_button>
-            },
-            {
-                path: '/all-anodroid-phone',
-                element: <All_android></All_android>
-            },
-            {
-                path: '/all-iphone',
-                element: <All_iphone></All_iphone>
-            },
-            {
                 path: '/register',
                 element: <Register></Register>
 
@@ -45,12 +33,22 @@ export const router = createBrowserRouter([
                 element: <Login></Login>
             },
             {
+                path: '/category-phones/:category',
+                loader: ({ params }) => fetch(`http://localhost:5000/all-phones?category=${params.category}`),
+                element: <CategoryPhone></CategoryPhone>
+            },
+
+            {
                 path: '/add-product',
-                element: <AddProduct></AddProduct>
+                element: <AddAproduct></AddAproduct>
             },
             {
-                path: '/add-a-button-phone',
-                element: <AddBtnPhone></AddBtnPhone>
+                path: '/my-uploaded-product',
+                element: <UploadedPoruct></UploadedPoruct>
+            },
+            {
+                path: '/my-buyer',
+                element: <MyBuyers></MyBuyers>
             }
 
         ]

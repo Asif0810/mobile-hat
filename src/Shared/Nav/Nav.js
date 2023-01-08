@@ -42,11 +42,19 @@ const Nav = () => {
     const navitem = <>
 
         <li className='text-green-500'>{user?.email}</li>
-        <li><Link to={'/add-product'}>add product</Link></li>
+
+        <div className="dropdown dropdown-bottom dropdown-end">
+            <label tabIndex={0} className="btn m-1">your activity</label>
+            <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><Link to={'/add-product'}>add product</Link></li>
+                <li><Link to={'/my-uploaded-product'} className=''>your Uploded product</Link></li>
+                <li><Link to={'/my-buyer'} className=''>Your Buyer</Link></li>
+            </ul>
+        </div>
         <li><Link to={'/'}>Home</Link></li>
         <li><Link to={'/login'} className=''>Sign in</Link></li>
         <li><Link to={'/register'} className=''>Sign up</Link></li>
-        <li><Link className=''>Dasboard</Link></li>
+
         <li className='text-red-500'><a onClick={logoutHandler} href=''>signOut</a></li>
         <li><button onClick={googleHandler} className='btn  bg-gradient-to-r from-[#FF5733] to-[#C70039] border-none'>Google</button></li>
 

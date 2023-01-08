@@ -24,7 +24,7 @@ const Register = () => {
                         saveUser(data.username, data.email, data.select)
                     })
                     .catch(error => console.log(error))
-                navigate('/')
+
                 toast.success('user created successful')
             })
             .catch(error => {
@@ -42,6 +42,15 @@ const Register = () => {
                 },
                 body: JSON.stringify(user)
             })
+                .then(res => res.json())
+                .then(data => {
+                    navigate('/')
+                    getUserToken(email)
+                })
+        }
+
+        const getUserToken = (email) => {
+            fetch(`http://localhost:5000/jwt?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
