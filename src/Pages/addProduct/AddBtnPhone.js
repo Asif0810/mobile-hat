@@ -52,7 +52,7 @@ const AddBtnPhone = () => {
 
     }
     return (
-        <div className='border-2'>
+        <div className=' my-10'>
             <h2 className='text-3xl text-center'>please valid information</h2>
             <form onSubmit={handleSubmit(addBtnPhoneHandler)} className='grid p-5  lg:grid-cols-3 gap-5 sm:grid-cols-1 md:grid-cols-2'>
                 <input  {...register('category')} type="text" readOnly defaultValue={'button phone'} className="input w-full input-bordered  max-w-xs" />
