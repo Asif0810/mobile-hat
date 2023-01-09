@@ -1,15 +1,32 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
+import { AuthCotext } from '../../Context/AuthProvider';
 
 const AdminActivity = () => {
-
-    const { data: users = [] } = useQuery({
+    const { user } = useContext(AuthCotext)
+    const { data: users = [], refetch } = useQuery({
         queryKey: ['user'],
         queryFn: () => fetch('http://localhost:5000/user')
             .then(res => res.json())
     })
     const deleteHandler = (id) => {
-        
+        fetch(`http://localhost:5000/delete-user/${id}`, {
+            method: 'DELETE',
+            headers: {
+                email: user?.email
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    toast.success('deleted successfull')
+                    refetch()
+                }
+                else {
+                    toast.error(data.message)
+                }
+            })
     }
     return (
         <div>

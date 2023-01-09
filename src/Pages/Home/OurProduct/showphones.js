@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
+
+import { AuthCotext } from '../../../Context/AuthProvider';
+
 
 const Showphones = ({ phone, setOpenModal }) => {
-    const { category,
+    const alerTHandler = () => {
+        toast('please login')
+    }
+    const { user } = useContext(AuthCotext)
+    const {
         image,
         location,
         resale_price,
@@ -21,10 +29,13 @@ const Showphones = ({ phone, setOpenModal }) => {
                     <p>seller : {seller_name}</p>
                     <p className='text-red-500'>original price :$ {original_price}</p>
                     <p><strong>location :</strong> {location}</p>
-                    <label onClick={() => setOpenModal(phone)} htmlFor="booking-modal" className="btn  btn-wide bg-gradient-to-r from-[#FF5733] to-[#C70039] border-none">bOOK NOW</label>
+                    {
+                        user?.email ? < label onClick={() => setOpenModal(phone)} htmlFor="booking-modal" className="btn  btn-wide bg-gradient-to-r from-[#FF5733] to-[#C70039] border-none">bOOK NOW</label>
+                            : < label onClick={() => alerTHandler()} className="btn  btn-wide bg-gradient-to-r from-[#FF5733] to-[#C70039] border-none">bOOK NOW</label>
+                    }
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

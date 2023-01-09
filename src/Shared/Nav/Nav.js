@@ -1,9 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../asset/th (1).jpg'
 import { AuthCotext } from '../../Context/AuthProvider';
 const Nav = () => {
-    const { google } = useContext(AuthCotext)
+    const [isAdmin, setAdmin] = useState(null)
+    console.log(isAdmin)
+    const { user, signout, google } = useContext(AuthCotext)
+
     const googleHandler = () => {
         google()
             .then(result => {
@@ -33,11 +36,18 @@ const Nav = () => {
             })
         console.log(user)
     }
-    const { user, signout } = useContext(AuthCotext)
+
     const logoutHandler = () => {
         signout()
             .then(() => { })
             .catch(console.error())
+    }
+    const adminHandler = (value) => {
+        fetch(`http://localhost:5000/admin-power?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setAdmin(data.isadmin)
+            })
     }
     const navitem = <>
 
@@ -51,7 +61,11 @@ const Nav = () => {
                 <li><Link to={'/my-buyer'} className=''>Your Buyer</Link></li>
             </ul>
         </div>
-        <li><Link to={'admin-activity'}>Admin activity</Link></li>
+        {
+
+            isAdmin ? <li><Link onClick={() => adminHandler()} to={'admin-activity'}>Admin activity</Link></li>
+                : <li className='hidden'><Link onClick={() => adminHandler()} to={'admin-activity'}>Admin activity</Link></li>
+        }
         <li><Link to={'/'}>Home</Link></li>
         <li><Link to={'/order'}>Order</Link></li>
         <li><Link to={'/login'} className=''>Sign in</Link></li>

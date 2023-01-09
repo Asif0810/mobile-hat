@@ -11,6 +11,7 @@ import MyBuyers from "../Pages/MyBuyers/MyBuyers";
 import MyOrder from "../Pages/MyOrder/MyOrder";
 import Register from "../Pages/Register/Register";
 import UploadedPoruct from "../Pages/uploadedProduct/UploadedPoruct";
+import PrivateRoutes from "./privateRoutes";
 
 
 
@@ -42,19 +43,19 @@ export const router = createBrowserRouter([
 
             {
                 path: '/add-product',
-                element: <AddAproduct></AddAproduct>
+                element: <PrivateRoutes><AddAproduct></AddAproduct></PrivateRoutes>
             },
             {
                 path: '/my-uploaded-product',
-                element: <UploadedPoruct></UploadedPoruct>
+                element: <PrivateRoutes><UploadedPoruct></UploadedPoruct></PrivateRoutes>
             },
             {
                 path: '/my-buyer',
-                element: <MyBuyers></MyBuyers>
+                element: <PrivateRoutes><MyBuyers></MyBuyers></PrivateRoutes>
             },
             {
                 path: '/order',
-                element: <MyOrder></MyOrder>
+                element: <PrivateRoutes><MyOrder></MyOrder></PrivateRoutes>
             },
             {
                 path: '/admin-activity',

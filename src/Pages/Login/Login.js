@@ -1,18 +1,24 @@
 import { error } from 'daisyui/src/colors';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthCotext } from '../../Context/AuthProvider';
 
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    
     const { signIn } = useContext(AuthCotext)
     const [loginError, setloginError] = useState('')
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const from = location.state?.from?.pathname || "/";
     const loginHandler = (data) => {
         signIn(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 console.log(user)
                 reset()
+                navigate(from, { replace: true });
             })
             .catch(error => {
 
