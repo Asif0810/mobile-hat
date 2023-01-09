@@ -51,6 +51,7 @@ const Nav = () => {
                 <li><Link to={'/my-buyer'} className=''>Your Buyer</Link></li>
             </ul>
         </div>
+        <li><Link to={'admin-activity'}>Admin activity</Link></li>
         <li><Link to={'/'}>Home</Link></li>
         <li><Link to={'/order'}>Order</Link></li>
         <li><Link to={'/login'} className=''>Sign in</Link></li>

@@ -1,6 +1,7 @@
 
 import Main from "../Layout/Main";
 import AddAproduct from "../Pages/addProduct/AddAproduct";
+import AdminActivity from "../Pages/AdminActivity/AdminActivity";
 
 import Home from "../Pages/Home/Home/Home";
 
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([
             {
                 path: '/order',
                 element: <MyOrder></MyOrder>
+            },
+            {
+                path: '/admin-activity',
+                element: <AdminActivity></AdminActivity>
             }
 
         ]
