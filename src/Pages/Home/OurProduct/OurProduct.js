@@ -5,7 +5,7 @@ import OurcategoriesDetails from './OurcategoriesDetails';
 const OurProduct = () => {
     const { data: phoneCategories = [] } = useQuery({
         queryKey: ['phone-categories'],
-        queryFn: () => fetch('http://localhost:5000/phone-categories')
+        queryFn: () => fetch('https://last-assignment-server-sigma.vercel.app/phone-categories')
             .then(res => res.json())
     })
     return (

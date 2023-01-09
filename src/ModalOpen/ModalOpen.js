@@ -34,7 +34,7 @@ const ModalOpen = ({ openModal, selectedDate, setOpenModal, refetch }) => {
             phone,
             image
         }
-        fetch('http://localhost:5000/booking-phone', {
+        fetch('https://last-assignment-server-sigma.vercel.app/booking-phone', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -35,7 +35,7 @@ const Register = () => {
 
         const saveUser = (name, email, user_category) => {
             const user = { name, email, user_category }
-            fetch('http://localhost:5000/user', {
+            fetch('https://last-assignment-server-sigma.vercel.app/user', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -50,7 +50,7 @@ const Register = () => {
         }
 
         const getUserToken = (email) => {
-            fetch(`http://localhost:5000/jwt?email=${email}`)
+            fetch(`https://last-assignment-server-sigma.vercel.app/jwt?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.accessToken) {

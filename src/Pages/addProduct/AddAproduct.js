@@ -39,7 +39,7 @@ const AddAproduct = () => {
 
                     }
                     console.log(phone)
-                    fetch('http://localhost:5000/all-phones', {
+                    fetch('https://last-assignment-server-sigma.vercel.app/all-phones', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

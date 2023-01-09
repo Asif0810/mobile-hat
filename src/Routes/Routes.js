@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/category-phones/:category',
-                loader: ({ params }) => fetch(`http://localhost:5000/all-phones?category=${params.category}`),
+                loader: ({ params }) => fetch(`https://last-assignment-server-sigma.vercel.app/all-phones?category=${params.category}`),
                 element: <CategoryPhone></CategoryPhone>
             },
 

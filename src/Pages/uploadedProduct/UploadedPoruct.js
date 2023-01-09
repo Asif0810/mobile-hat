@@ -7,7 +7,7 @@ const UploadedPoruct = () => {
     const { user } = useContext(AuthCotext)
     const { data: uploadedProducts = [] } = useQuery({
         queryKey: ['uploaded-products', user?.email],
-        queryFn: () => fetch(`http://localhost:5000/uploaded-products?email=${user.email}`)
+        queryFn: () => fetch(`https://last-assignment-server-sigma.vercel.app/uploaded-products?email=${user.email}`)
             .then(res => res.json())
     })
     return (

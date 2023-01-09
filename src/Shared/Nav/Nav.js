@@ -23,7 +23,7 @@ const Nav = () => {
             email,
             user_category: 'buyer'
         }
-        fetch('http://localhost:5000/user', {
+        fetch('https://last-assignment-server-sigma.vercel.app/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -43,7 +43,7 @@ const Nav = () => {
             .catch(console.error())
     }
     const adminHandler = () => {
-        fetch(`http://localhost:5000/admin-power?email=${user?.email}`)
+        fetch(`https://last-assignment-server-sigma.vercel.app/admin-power?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.isadmin)

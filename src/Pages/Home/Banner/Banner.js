@@ -9,7 +9,7 @@ const Banner = () => {
                     <img src={banner} className="w-full" alt='' />
                 </div>
             </div>
-            <div className=' absolute  ml-[380px] bottom-60'>
+            <div className=' absolute  ml-[380px] bottom-32'>
                 <h1 className='text-2xl hidden sm:hidden lg:block font-bold text-white'>The best price guaranteed <br />  for your old phone</h1>
             </div>
         </div>

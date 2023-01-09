@@ -7,11 +7,11 @@ const AdminActivity = () => {
     const { user } = useContext(AuthCotext)
     const { data: users = [], refetch } = useQuery({
         queryKey: ['user'],
-        queryFn: () => fetch('http://localhost:5000/user')
+        queryFn: () => fetch('https://last-assignment-server-sigma.vercel.app/user')
             .then(res => res.json())
     })
     const deleteHandler = (id) => {
-        fetch(`http://localhost:5000/delete-user/${id}`, {
+        fetch(`https://last-assignment-server-sigma.vercel.app/delete-user/${id}`, {
             method: 'DELETE',
             headers: {
                 email: user?.email
