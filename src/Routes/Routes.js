@@ -2,6 +2,7 @@
 import Main from "../Layout/Main";
 import AddAproduct from "../Pages/addProduct/AddAproduct";
 import AdminActivity from "../Pages/AdminActivity/AdminActivity";
+import Blog from "../Pages/Blog/Blog";
 
 import Home from "../Pages/Home/Home/Home";
 
@@ -59,7 +60,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/admin-activity',
-                element: <AdminActivity></AdminActivity>
+                element: <PrivateRoutes><AdminActivity></AdminActivity></PrivateRoutes>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
 
         ]

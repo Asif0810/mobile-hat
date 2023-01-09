@@ -42,7 +42,7 @@ const Nav = () => {
             .then(() => { })
             .catch(console.error())
     }
-    const adminHandler = (value) => {
+    const adminHandler = () => {
         fetch(`http://localhost:5000/admin-power?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
@@ -61,12 +61,13 @@ const Nav = () => {
                 <li><Link to={'/my-buyer'} className=''>Your Buyer</Link></li>
             </ul>
         </div>
-        {
 
-            isAdmin ? <li><Link onClick={() => adminHandler()} to={'admin-activity'}>Admin activity</Link></li>
-                : <li className='hidden'><Link onClick={() => adminHandler()} to={'admin-activity'}>Admin activity</Link></li>
-        }
+
+        <li><Link onClick={() => adminHandler()} to={'/admin-activity'}>Admin activity</Link></li>
+
+
         <li><Link to={'/'}>Home</Link></li>
+        <li><Link to={'blog'}>Blog</Link></li>
         <li><Link to={'/order'}>Order</Link></li>
         <li><Link to={'/login'} className=''>Sign in</Link></li>
         <li><Link to={'/register'} className=''>Sign up</Link></li>
