@@ -7,6 +7,7 @@ import Home from "../Pages/Home/Home/Home";
 import CategoryPhone from "../Pages/Home/OurProduct/categoryPhone";
 import Login from "../Pages/Login/Login";
 import MyBuyers from "../Pages/MyBuyers/MyBuyers";
+import MyOrder from "../Pages/MyOrder/MyOrder";
 import Register from "../Pages/Register/Register";
 import UploadedPoruct from "../Pages/uploadedProduct/UploadedPoruct";
 
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
             {
                 path: '/my-buyer',
                 element: <MyBuyers></MyBuyers>
+            },
+            {
+                path: '/order',
+                element: <MyOrder></MyOrder>
             }
 
         ]

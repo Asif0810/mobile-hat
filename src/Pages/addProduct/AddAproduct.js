@@ -42,16 +42,17 @@ const AddAproduct = () => {
                     fetch('http://localhost:5000/all-phones', {
                         method: 'POST',
                         headers: {
-                            'content-type': 'application/json'
+                            'content-type': 'application/json',
                         },
                         body: JSON.stringify(phone)
                     })
                         .then(res => res.json())
                         .then(data => {
                             if (data.acknowledged) {
-
                                 toast.success('upload successfull')
                                 reset()
+                            } else {
+                                toast.error(data.message)
                             }
                             console.log(data)
                         })

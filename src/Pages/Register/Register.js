@@ -53,6 +53,9 @@ const Register = () => {
             fetch(`http://localhost:5000/jwt?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
+                    if (data.accessToken) {
+                        localStorage.setItem('accessToken', data.accessToken)
+                    }
                     console.log(data)
                 })
         }
@@ -89,7 +92,7 @@ const Register = () => {
                             <select {...register('select', { required: 'are you buyer or seller' })} className="input-bordered select w-full max-w-xs">
 
                                 <option value={'seller'}>Seller</option>
-                                <option selected value={'buyer'}>Buyer</option>
+                                <option value={'buyer'}>Buyer</option>
 
                             </select>
                         </div>

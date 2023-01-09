@@ -10,7 +10,7 @@ const Nav = () => {
                 const user = result.user;
                 console.log(user.displayName)
 
-                savuser(user?.email, user.displayName,)
+                savuser(user.displayName, user?.email)
             })
             .catch(console.error())
     }
@@ -52,6 +52,7 @@ const Nav = () => {
             </ul>
         </div>
         <li><Link to={'/'}>Home</Link></li>
+        <li><Link to={'/order'}>Order</Link></li>
         <li><Link to={'/login'} className=''>Sign in</Link></li>
         <li><Link to={'/register'} className=''>Sign up</Link></li>
 
